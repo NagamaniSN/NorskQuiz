@@ -80,7 +80,7 @@ class QuizFragment : Fragment() {
                     }
                 } else {
                     // Lost scenario
-                    view.findNavController().navigate(R.id.action_quizFragment_to_quizLostFragment)
+                    view.findNavController().navigate(R.id.action_quizFragment_to_quizOverFragment)
                 }
             }
         }
