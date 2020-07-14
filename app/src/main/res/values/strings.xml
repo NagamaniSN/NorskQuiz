@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Norsk Quiz</string>
+    <string name="submit_button">SUBMIT</string>
+    <string name="next_button">NEXT</string>
+    <string name="question_title">Norsk Quiz (%1$d/%2$d)</string>
+    <string name="congratulations">Congratulations</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

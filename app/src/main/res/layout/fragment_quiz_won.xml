@@ -1,14 +1,57 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.QuizWonFragment">
+    tools:context="com.nagamani.norskquiz.ui.QuizWonFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/gameWonConstraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <Button
+            android:id="@+id/nextMatchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/button_padding"
+            android:paddingEnd="@dimen/button_padding"
+            android:text="Next Match"
+            android:textColor="@color/youWinDark"
+            android:textSize="@dimen/button_text_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/youWinImage" />
+
+        <ImageView
+            android:id="@+id/youWinImage"
+            android:layout_width="388dp"
+            android:layout_height="449dp"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:layout_marginBottom="@dimen/vertical_margin"
+            android:layout_marginLeft="@dimen/vertical_margin"
+            android:layout_marginRight="@dimen/vertical_margin"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toTopOf="@+id/nextMatchButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/hurray" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="307dp"
+            android:layout_height="124dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/congrats"
+            app:layout_constraintBottom_toTopOf="@+id/nextMatchButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

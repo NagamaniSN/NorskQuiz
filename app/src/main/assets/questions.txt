@@ -1,0 +1,10 @@
+Hei! Jeg _______ Nils.,heter,navn,vœre,sier
+Han _______ år gammel.,er,har,hadde,gjør
+Jeg _______en bok i forrige uke.,leste,leser,å lese,skrive
+Mari_______middag hver dag.,spiser,spise,lage,måltid
+Klokken er 15:40. Det er det samme som:.,Ti over halv fire,fem på kvart på fire,førti over tre,fjorten førti
+Jeg har _______ i Norge hele livet.,bodd,bor,boende,å bo
+Hun har _______dette TV-programmet.,sett,sette,se,så
+Når begynte det å snø?.,Det begynte for en time siden,For begynte en time siden,I en time,Det snødde en time.
+Hvor lenge har det regnet?.,Det har regnet i circa en time,Det regnet for en time siden,Regnet faller ned,Det kommer til å regne i en time.
+Hvor arbeider han?.,Han arbeider i en bank,Han ikke arbeider,Hans bank er arbeid hans,Han bor I Oslo.

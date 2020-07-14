@@ -1,14 +1,41 @@
 package com.nagamani.norskquiz.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.nagamani.norskquiz.R
+import com.nagamani.norskquiz.databinding.FragmentQuizBinding
+import kotlinx.android.synthetic.main.fragment_quiz.*
+import java.io.File
 
 //Fragment to display questions
 class QuizFragment : Fragment() {
+    private var questions = mutableListOf<Question>()
+
+    data class Question(
+        val text: String,
+        val answers: List<String>
+    )
+
+
+    private fun prepareQuestions() {
+
+        context?.assets?.open("questions.txt")?.bufferedReader()?.forEachLine {
+            var line = it.split(".,")
+            questions.add(Question(text = line[0],answers = line[1].split(",")))
+        }
+    }
+
+    lateinit var currentQuestion: Question
+    lateinit var answers: MutableList<String>
+    private var questionIndex = 0
+    private val numQuestions by lazy { Math.min((questions.size + 1) / 2, 3) }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,11 +43,64 @@ class QuizFragment : Fragment() {
 
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_quiz, container, false)
+    override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle? ): View? {
+        val binding = DataBindingUtil.inflate<FragmentQuizBinding>(
+            inflater, R.layout.fragment_quiz, container, false)
+        randomizeQuestions()
+
+        // Bind this fragment class to the layout
+        binding.quiz = this
+
+
+        // onClickListener for the submitButton
+        binding.nextButton.setOnClickListener @Suppress("UNUSED_ANONYMOUS_PARAMETER")
+        { view: View ->
+            val checkedId = binding.questionRadioGroup.checkedRadioButtonId
+            // Do nothing if nothing is checked (id == -1)
+            if (-1 != checkedId) {
+                var answerIndex = 0
+                when (checkedId) {
+                    R.id.secondAnswerRadioButton -> answerIndex = 1
+                    R.id.thirdAnswerRadioButton -> answerIndex = 2
+                    R.id.fourthAnswerRadioButton -> answerIndex = 3
+                }
+                // The first answer in the original question is always the correct one, so if our
+                // answer matches, we have the correct answer.
+                if (answers[answerIndex] == currentQuestion.answers[0]) {
+                    questionIndex++
+                    // Advance to the next question
+                    if (questionIndex < questions.size) {
+                        currentQuestion = questions[questionIndex]
+                        setQuestion()
+                        binding.invalidateAll()
+                    } else {
+                        // Won scenario
+                        view.findNavController().navigate(R.id.action_quizFragment_to_quizWonFragment)
+                    }
+                } else {
+                    // Lost scenario
+                    view.findNavController().navigate(R.id.action_quizFragment_to_quizLostFragment)
+                }
+            }
+        }
+        return binding.root
+    }
+
+    private fun randomizeQuestions() {
+        prepareQuestions()
+        questions.shuffle()
+        questionIndex = 0
+        setQuestion()
+
+    }
+
+    //randomize the answers
+    private fun setQuestion() {
+        questionRadioGroup?.clearCheck()
+        currentQuestion = questions[questionIndex]
+        answers = currentQuestion.answers.toMutableList()
+        answers.shuffle()
+        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.question_title, questionIndex + 1, questions.size)
     }
 }

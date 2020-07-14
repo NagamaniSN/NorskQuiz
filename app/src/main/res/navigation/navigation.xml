@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.nagamani.norskquiz.ui.WelcomeFragment"
-        android:label="WelcomeFragment"
+        android:label="Welcome"
         tools:layout="@layout/fragment_welcome" >
         <action
             android:id="@+id/action_welcomeFragment_to_quizFragment"
@@ -17,6 +17,23 @@
     <fragment
         android:id="@+id/quizFragment"
         android:name="com.nagamani.norskquiz.ui.QuizFragment"
-        android:label="fragment_quiz"
-        tools:layout="@layout/fragment_quiz" />
+        android:label="Norsk Quiz"
+        tools:layout="@layout/fragment_quiz" >
+        <action
+            android:id="@+id/action_quizFragment_to_quizWonFragment"
+            app:destination="@id/quizWonFragment" />
+        <action
+            android:id="@+id/action_quizFragment_to_quizLostFragment"
+            app:destination="@id/quizLostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizWonFragment"
+        android:name="com.nagamani.norskquiz.ui.QuizWonFragment"
+        android:label="YOU WON"
+        tools:layout="@layout/fragment_quiz_won" />
+    <fragment
+        android:id="@+id/quizLostFragment"
+        android:name="com.nagamani.norskquiz.ui.QuizLostFragment"
+        android:label="YOU LOST"
+        tools:layout="@layout/fragment_quiz_lost" />
 </navigation>
