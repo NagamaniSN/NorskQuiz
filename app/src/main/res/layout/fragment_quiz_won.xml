@@ -1,4 +1,3 @@
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,10 +12,11 @@
             android:id="@+id/nextMatchButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/round_button"
             android:paddingStart="@dimen/button_padding"
             android:paddingEnd="@dimen/button_padding"
             android:text="Next Match"
-            android:textColor="@color/youWinDark"
+            android:textColor="@android:color/white"
             android:textSize="@dimen/button_text_size"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -26,14 +26,12 @@
 
         <ImageView
             android:id="@+id/youWinImage"
-            android:layout_width="388dp"
-            android:layout_height="449dp"
+            android:layout_width="383dp"
+            android:layout_height="355dp"
             android:layout_marginStart="@dimen/horizontal_margin"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="@dimen/horizontal_margin"
             android:layout_marginBottom="@dimen/vertical_margin"
-            android:layout_marginLeft="@dimen/vertical_margin"
-            android:layout_marginRight="@dimen/vertical_margin"
             android:scaleType="fitCenter"
             app:layout_constraintBottom_toTopOf="@+id/nextMatchButton"
             app:layout_constraintEnd_toEndOf="parent"
@@ -41,17 +39,18 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/hurray" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="307dp"
-            android:layout_height="124dp"
-            android:layout_marginBottom="20dp"
-            android:src="@drawable/congrats"
+        <TextView
+            android:id="@+id/scoreTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="textview"
+            android:textColor="@color/flag_red"
+            android:textSize="@dimen/score_text_size"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/nextMatchButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/youWinImage" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

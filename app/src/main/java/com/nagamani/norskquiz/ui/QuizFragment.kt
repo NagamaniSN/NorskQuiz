@@ -1,22 +1,21 @@
 package com.nagamani.norskquiz.ui
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.nagamani.norskquiz.R
 import com.nagamani.norskquiz.databinding.FragmentQuizBinding
-import kotlinx.android.synthetic.main.fragment_quiz.*
-import java.io.File
 
 //Fragment to display questions
 class QuizFragment : Fragment() {
     private var questions = mutableListOf<Question>()
+
 
     data class Question(
         val text: String,
@@ -28,14 +27,15 @@ class QuizFragment : Fragment() {
 
         context?.assets?.open("questions.txt")?.bufferedReader()?.forEachLine {
             var line = it.split(".,")
-            questions.add(Question(text = line[0],answers = line[1].split(",")))
+            questions.add(Question(text = line[0], answers = line[1].split(",")))
         }
     }
 
     lateinit var currentQuestion: Question
     lateinit var answers: MutableList<String>
     private var questionIndex = 0
-    private val numQuestions by lazy { Math.min((questions.size + 1) / 2, 3) }
+    private var correctAnswered = 0
+    private val numQuestions by lazy { Math.min((questions.size + 1) / 8, 10) }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,10 +43,14 @@ class QuizFragment : Fragment() {
 
     }
 
-    override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle? ): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         val binding = DataBindingUtil.inflate<FragmentQuizBinding>(
-            inflater, R.layout.fragment_quiz, container, false)
+            inflater, R.layout.fragment_quiz, container, false
+        )
+
         randomizeQuestions()
 
         // Bind this fragment class to the layout
@@ -65,26 +69,41 @@ class QuizFragment : Fragment() {
                     R.id.thirdAnswerRadioButton -> answerIndex = 2
                     R.id.fourthAnswerRadioButton -> answerIndex = 3
                 }
+
                 // The first answer in the original question is always the correct one, so if our
                 // answer matches, we have the correct answer.
                 if (answers[answerIndex] == currentQuestion.answers[0]) {
-                    questionIndex++
-                    // Advance to the next question
-                    if (questionIndex < questions.size) {
-                        currentQuestion = questions[questionIndex]
-                        setQuestion()
-                        binding.invalidateAll()
-                    } else {
-                        // Won scenario
-                        view.findNavController().navigate(R.id.action_quizFragment_to_quizWonFragment)
-                    }
-                } else {
-                    // Lost scenario
-                    view.findNavController().navigate(R.id.action_quizFragment_to_quizOverFragment)
+                    correctAnswered++
                 }
+                // Advance to the next question
+                if (questionIndex < questions.size) {
+                    currentQuestion = questions[questionIndex]
+                    setQuestion()
+                    binding.invalidateAll()
+                } else if (correctAnswered > 0.7 * questions.size) {
+                    // Won scenario
+                    view.findNavController()
+                        .navigate(R.id.action_quizFragment_to_quizWonFragment, getBundle())
+
+                } else view.findNavController()
+                    .navigate(R.id.action_quizFragment_to_quizOverFragment, getBundle())
             }
+
+        }
+
+        binding.submitButton.setOnClickListener @Suppress("UNUSED_ANONYMOUS_PARAMETER")
+        { view: View ->
+            view.findNavController()
+                .navigate(R.id.action_quizFragment_to_quizOverFragment, getBundle())
         }
         return binding.root
+    }
+
+    fun getBundle(): Bundle {
+        return bundleOf(
+            "questionsCount" to questions.size,
+            "correctlyAnsweredCount" to correctAnswered
+        )
     }
 
     private fun randomizeQuestions() {
@@ -97,10 +116,11 @@ class QuizFragment : Fragment() {
 
     //randomize the answers
     private fun setQuestion() {
-        questionRadioGroup?.clearCheck()
         currentQuestion = questions[questionIndex]
+        questionIndex++
         answers = currentQuestion.answers.toMutableList()
         answers.shuffle()
-        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.question_title, questionIndex + 1, questions.size)
+        (activity as AppCompatActivity).supportActionBar?.title =
+            getString(R.string.question_title).plus(getString(R.string.title_number, questionIndex, questions.size))
     }
 }
