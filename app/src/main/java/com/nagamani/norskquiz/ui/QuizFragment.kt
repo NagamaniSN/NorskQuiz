@@ -1,6 +1,7 @@
 package com.nagamani.norskquiz.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,13 +30,14 @@ class QuizFragment : Fragment() {
             var line = it.split(".,")
             questions.add(Question(text = line[0], answers = line[1].split(",")))
         }
+        Log.d("nagamani","question size: ${questions.size}")
     }
 
     lateinit var currentQuestion: Question
     lateinit var answers: MutableList<String>
     private var questionIndex = 0
     private var correctAnswered = 0
-    private val numQuestions by lazy { Math.min((questions.size + 1) / 8, 10) }
+    private val numQuestions by lazy { Math.min((questions.size + 1) / 5, 10) }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -76,11 +78,11 @@ class QuizFragment : Fragment() {
                     correctAnswered++
                 }
                 // Advance to the next question
-                if (questionIndex < questions.size) {
+                if (questionIndex < numQuestions) {
                     currentQuestion = questions[questionIndex]
                     setQuestion()
                     binding.invalidateAll()
-                } else if (correctAnswered > 0.7 * questions.size) {
+                } else if (correctAnswered > 0.7 * numQuestions) {
                     // Won scenario
                     view.findNavController()
                         .navigate(R.id.action_quizFragment_to_quizWonFragment, getBundle())
@@ -101,7 +103,7 @@ class QuizFragment : Fragment() {
 
     fun getBundle(): Bundle {
         return bundleOf(
-            "questionsCount" to questions.size,
+            "questionsCount" to numQuestions,
             "correctlyAnsweredCount" to correctAnswered
         )
     }
@@ -121,6 +123,6 @@ class QuizFragment : Fragment() {
         answers = currentQuestion.answers.toMutableList()
         answers.shuffle()
         (activity as AppCompatActivity).supportActionBar?.title =
-            getString(R.string.question_title).plus(getString(R.string.title_number, questionIndex, questions.size))
+            getString(R.string.question_title).plus(getString(R.string.title_number, questionIndex, numQuestions))
     }
 }

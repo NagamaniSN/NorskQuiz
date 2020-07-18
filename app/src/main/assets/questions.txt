@@ -1,10 +1,69 @@
-Hei! Jeg _______ Nils.,heter,navn,vœre,sier
-Han _______ år gammel.,er,har,hadde,gjør
-Jeg _______en bok i forrige uke.,leste,leser,å lese,skrive
-Mari_______middag hver dag.,spiser,spise,lage,måltid
+Hei! Jeg _______ Nils..,heter,navn,vœre,sier
+Han _______ år gammel..,er,har,hadde,gjør
+Jeg _______en bok i forrige uke..,leste,leser,å lese,skrive
+Mari_______middag hver dag..,spiser,spise,lage,måltid
 Klokken er 15:40. Det er det samme som:.,Ti over halv fire,fem på kvart på fire,førti over tre,fjorten førti
-Jeg har _______ i Norge hele livet.,bodd,bor,boende,å bo
-Hun har _______dette TV-programmet.,sett,sette,se,så
+Jeg har _______ i Norge hele livet..,bodd,bor,boende,å bo
+Hun har _______dette TV-programmet..,sett,sette,se,så
 Når begynte det å snø?.,Det begynte for en time siden,For begynte en time siden,I en time,Det snødde en time.
-Hvor lenge har det regnet?.,Det har regnet i circa en time,Det regnet for en time siden,Regnet faller ned,Det kommer til å regne i en time.
+Hvor lenge har det regnet?.,Det har regnet i circa en timem,Det regnet for en time siden,Regnet faller ned,Det kommer til å regne i en time.
 Hvor arbeider han?.,Han arbeider i en bank,Han ikke arbeider,Hans bank er arbeid hans,Han bor I Oslo.
+Hvor_______du?.,arbeider,arbeidere,arbeid,har arbeidetet
+Hvet du hvor han _______nå?.,er,var,være,bli
+Jeg _______så godt jeg kan!.,prøver,prøv,prøvd,prøve
+Om sommeren liker jeg å vœre _______ fjellet..,på,mot,i,mellom
+Jeg_______å kjøre buss..,liker ikke,ikke liker,ikke lik,like ikke
+Han_______fisk..,spiser ikke,ikke spis,nei,aldri spist
+De_______spise på kafé..,liker å,ikke liker,ikke,gjør ikke
+Alle_______god mat!.,liker,liking,like,likt
+Når _______du_______ I går kveld?.,la - deg,la - seg,legge - seg,lagt - deg
+Han kjører en _______bil..,grønn,grønne,grønt,gule
+Alle husene er _______..,røde,gul,hvitt,svartere
+Jeg vil ta _______til Bergen..,toget,toger,togene,togs
+Vil du komme på besøk til _______?.,oss,vi,dere,disse
+Dette brødet er gammelt! Det _______!.,smaker vondt,er god,være vondt,ikke godt
+_______bil er dette?.,hvem sin,hvems,hans,hvordan
+Det er _______vanskelig!.,ikke noe,noe,mange,nei
+Har du _______lunch?.,spist,spiste,å spise,ha
+Mannen_______i nabohuset er lege..,som bor,hvem bor,hun bo,er
+Mange av barna ville _______ hjem..,gå,gikk,gått,ha gå
+Skal vi _______en øl og snakke om saken?.,ta,ha,tok,tar
+Da_______i morgen!.,sees vi,ser vi,vi se,ser du!
+_______er galt?.,hva,hvorfor,når,hvordan
+Dette må vi finne_______!.,ut av,i,ned,hva
+Kari har ikke jobb. Hun er _______..,arbeidsløs,ikke arbeid..,uarbeider,arbeid ikke
+Liker du _______kjolen?.,denne,disse,de,dere
+De _______er nok enige..,fleste,flest,flere,flereste
+De malte _______rødt..,huset,hus,en hus,huser
+Jeg vil gjerne kjøpe disse _______..,bildene,bilde,bilder,et bilde
+Hvem har _______å snakke norsk?.,lært deg,lære,lærer,læring
+Det er morsomt _______lære norsk!.,å,og,og å,åh
+Han kjøpte mange_______..,fine suvenirer,fin suvenir,fint suvenirer,en fin suvenir
+Denne _______går veldig fort..,bilen,bil,biler,bilene
+Hva _______han gjøre nå?.,skal,ville,skalle,villet
+Hvorfor_______du det slik?.,gjorde,gjort,gjøre,gjorte
+Mobilen_______..,ringer,ring,lyde,bip
+Det fine _______deg er at du er så smart!.,ved,i,på,med
+Hun _______en fin bok..,har skrevet,å skrive,skrevet,skrivet
+Jeg ville besøke deg I går, men jeg hadde ikke adressen ________..,din,min,sin,dine
+Dette slottet er meget gammelt. Det _______for lenge siden..,ble bygget,bygges,var bygges,har bygget
+Han vil gjerne reise_______Oslo..,til,på,mot,for
+Hun liker ikke _______ hva hun skal spise..,å bli fortalt,fortelle,å bli fortelle,blir fortalt
+Han liker den nye jobben _______godt..,sin,seg,sitt,sine
+_______ spiste gress..,kua,Kuen,En ku,en kuer
+Hvilken setning er riktig?.,Han eier en grønn bil.,Han eier en grønne bil.,Han eier grønn biler.,Han eier grønne bilene.
+Dette flyet er ikke forsinket!.,Jo, det er det!,Ja, det er det ikke!,Nei, det er forsinket..,Ja, flyet er forsinket.
+Kan du gå_______for meg, værsåsnill?.,på butikken,til butikk,ved butikker,i butikkene
+Hun liker de fine nye klœrne _______ som hun kjøpte til seg selv..,sine,seg,hennes,hun
+Jeg liker å _______til London i blant..,dra,gå,går,drar
+_______noe sted å spise i nœrheten?.,er det,det er,er dette,er
+Vil du ha _______kaffe?.,en kopp,et kopp,ei kopp,kopper
+Jeg er _______. Jeg vil spise nå!.,sulten,mat,tørst,trøtt
+_______ var fine og billige, syntes hun..,disse kjolene,denne kjolen,den kjolen,de kjolen
+Barna hans var veldig _______..,små,liten,mindre,lille
+Det er mange gode restauranter _______Tromsø..,i,på,med,gjennom
+Ivar er sint _______sønnen sin..,på,ved,for,med
+Er denne hunden snill? Nei, men _______hunden er!.,den,disse,de,dere
+Han tenkte å dra og besøke _______ i Trondheim..,dem,de,man,hos
+Han likte å være på besøk _______..,hos dem,ved dere,med seg,på dem
+Å lære et nytt språk er alltid_______!.,morsomt,morsom,morsommere,morsomme
