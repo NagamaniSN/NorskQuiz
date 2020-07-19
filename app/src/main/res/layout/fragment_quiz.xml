@@ -143,16 +143,14 @@
                     android:id="@+id/submitButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/question_horizontal_margin"
-                    android:layout_marginEnd="@dimen/question_horizontal_margin"
                     android:background="@drawable/round_button"
                     android:text="@string/quit_button"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/button_text_size"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.42"
-                    app:layout_constraintStart_toEndOf="@+id/nextButton"
+                    app:layout_constraintHorizontal_bias="0.724"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0" />
 

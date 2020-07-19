@@ -13,7 +13,8 @@
     <string name="about_text">Norsk Quiz will help you test the Norwegian grammar concepts you have learned.
         \nPlaying the Quiz several times helps you remember and improve your vocabulary.</string>
     <string name="rules_text">Select the answer from the options given. You can choose to continue with Next button or quit using the Quit button at any stage of the quiz.
-        \n\nYou can check your score at the end of the quiz. You are considered Pass, if you score over 70%.\n\nYou can return to the title screen using up or back from within the quiz screen, and this will also end your game.</string>
+        \n\nYou can check your score at the end of the quiz. You are considered Pass, if you score over 70%.
+        \n\nYou can return to the title screen using up or back from within the quiz screen, and this will also end your quiz.</string>
     <string name="rules">Rules</string>
     <string name="about">About</string>
 
