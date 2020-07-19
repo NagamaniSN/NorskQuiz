@@ -6,8 +6,8 @@ Klokken er 15:40. Det er det samme som:.,Ti over halv fire,fem på kvart på fir
 Jeg har _______ i Norge hele livet..,bodd,bor,boende,å bo
 Hun har _______dette TV-programmet..,sett,sette,se,så
 Når begynte det å snø?.,Det begynte for en time siden,For begynte en time siden,I en time,Det snødde en time.
-Hvor lenge har det regnet?.,Det har regnet i circa en timem,Det regnet for en time siden,Regnet faller ned,Det kommer til å regne i en time.
-Hvor arbeider han?.,Han arbeider i en bank,Han ikke arbeider,Hans bank er arbeid hans,Han bor I Oslo.
+Hvor lenge har det regnet?.,Det har regnet i circa en time,Det regnet for en time siden,Regnet faller ned,Det kommer til å regne i en time.
+Hvor arbeider han?.,Han arbeider i en bank,Han ikke arbeider,Hans bank er arbeid hans,Han bor i Oslo.
 Hvor_______du?.,arbeider,arbeidere,arbeid,har arbeidetet
 Hvet du hvor han _______nå?.,er,var,være,bli
 Jeg _______så godt jeg kan!.,prøver,prøv,prøvd,prøve
@@ -31,7 +31,7 @@ Skal vi _______en øl og snakke om saken?.,ta,ha,tok,tar
 Da_______i morgen!.,sees vi,ser vi,vi se,ser du!
 _______er galt?.,hva,hvorfor,når,hvordan
 Dette må vi finne_______!.,ut av,i,ned,hva
-Kari har ikke jobb. Hun er _______..,arbeidsløs,ikke arbeid..,uarbeider,arbeid ikke
+Kari har ikke jobb. Hun er _______..,arbeidsløs,ikke arbeid,uarbeider,arbeid ikke
 Liker du _______kjolen?.,denne,disse,de,dere
 De _______er nok enige..,fleste,flest,flere,flereste
 De malte _______rødt..,huset,hus,en hus,huser
@@ -51,8 +51,7 @@ Han vil gjerne reise_______Oslo..,til,på,mot,for
 Hun liker ikke _______ hva hun skal spise..,å bli fortalt,fortelle,å bli fortelle,blir fortalt
 Han liker den nye jobben _______godt..,sin,seg,sitt,sine
 _______ spiste gress..,kua,Kuen,En ku,en kuer
-Hvilken setning er riktig?.,Han eier en grønn bil.,Han eier en grønne bil.,Han eier grønn biler.,Han eier grønne bilene.
-Dette flyet er ikke forsinket!.,Jo, det er det!,Ja, det er det ikke!,Nei, det er forsinket..,Ja, flyet er forsinket.
+Hvilken setning er riktig?.,Han eier en grønn bil,Han eier en grønne bil,Han eier grønn biler,Han eier grønne bilene
 Kan du gå_______for meg, værsåsnill?.,på butikken,til butikk,ved butikker,i butikkene
 Hun liker de fine nye klœrne _______ som hun kjøpte til seg selv..,sine,seg,hennes,hun
 Jeg liker å _______til London i blant..,dra,gå,går,drar

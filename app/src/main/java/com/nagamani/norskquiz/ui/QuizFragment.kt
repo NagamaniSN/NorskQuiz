@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.nagamani.norskquiz.R
 import com.nagamani.norskquiz.databinding.FragmentQuizBinding
+import java.util.ResourceBundle.getBundle
 
 //Fragment to display questions
 class QuizFragment : Fragment() {
@@ -30,6 +31,7 @@ class QuizFragment : Fragment() {
             var line = it.split(".,")
             questions.add(Question(text = line[0], answers = line[1].split(",")))
         }
+        for(i in 0..questions.size-1) Log.d("nagamani","${questions.get(i)}")
         Log.d("nagamani","question size: ${questions.size}")
     }
 
@@ -52,7 +54,8 @@ class QuizFragment : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentQuizBinding>(
             inflater, R.layout.fragment_quiz, container, false
         )
-
+        Log.d("tej","oncreateView")
+        prepareQuestions()
         randomizeQuestions()
 
         // Bind this fragment class to the layout
@@ -88,23 +91,25 @@ class QuizFragment : Fragment() {
                     currentQuestion = questions[questionIndex]
                     setQuestion()
                     binding.invalidateAll()
-                } else if (correctAnswered > 0.7 * numQuestions) {
-                    // Won scenario
-                    view.findNavController()
-                        .navigate(R.id.action_quizFragment_to_quizWonFragment, getBundle())
-
-                } else view.findNavController()
-                    .navigate(R.id.action_quizFragment_to_quizOverFragment, getBundle())
+                } else checkResults(view)
             }
 
         }
 
         binding.submitButton.setOnClickListener @Suppress("UNUSED_ANONYMOUS_PARAMETER")
         { view: View ->
-            view.findNavController()
-                .navigate(R.id.action_quizFragment_to_quizOverFragment, getBundle())
+            checkResults(view)
         }
         return binding.root
+    }
+
+    fun checkResults(view: View) {
+        if (correctAnswered >= 0.7 * numQuestions)
+        // Won scenario
+            view.findNavController()
+                .navigate(R.id.action_quizFragment_to_quizWonFragment, getBundle())
+        else view.findNavController()
+            .navigate(R.id.action_quizFragment_to_quizOverFragment, getBundle())
     }
 
     fun getBundle(): Bundle {
@@ -115,7 +120,6 @@ class QuizFragment : Fragment() {
     }
 
     private fun randomizeQuestions() {
-        prepareQuestions()
         questions.shuffle()
         questionIndex = 0
         setQuestion()
