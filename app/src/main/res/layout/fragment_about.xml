@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.nagamani.norskquiz.ui.AboutFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/aboutImage"
+                android:layout_width="407dp"
+                android:layout_height="298dp"
+                android:layout_marginTop="40dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/quiz_image" />
+
+            <TextView
+                android:id="@+id/rulesText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_margin"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="@dimen/horizontal_margin"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/about_text"
+                android:textAlignment="inherit"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/flag_blue"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/aboutImage" />
+
+            <Button
+                android:id="@+id/contactMeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round_button"
+                android:paddingLeft="@dimen/question_horizontal_margin"
+                android:paddingRight="@dimen/question_horizontal_margin"
+                android:text="@string/contact_me"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/button_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rulesText" />
+
+            <TextView
+                android:id="@+id/contactMeView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/email_id"
+                android:textColor="@color/flag_blue"
+                android:textSize="@dimen/answer_text_size"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contactMeButton" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

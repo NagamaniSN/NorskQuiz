@@ -79,6 +79,10 @@ class QuizFragment : Fragment() {
                 }
                 // Advance to the next question
                 if (questionIndex < numQuestions) {
+                    //change text of quit button to submit
+                    if(questionIndex==numQuestions-1)
+                        binding.submitButton.text = getString(R.string.submit_button)
+
                     currentQuestion = questions[questionIndex]
                     setQuestion()
                     binding.invalidateAll()
