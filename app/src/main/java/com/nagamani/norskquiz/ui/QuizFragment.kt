@@ -1,7 +1,6 @@
 package com.nagamani.norskquiz.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.nagamani.norskquiz.R
 import com.nagamani.norskquiz.databinding.FragmentQuizBinding
-import java.util.ResourceBundle.getBundle
+import timber.log.Timber
 
 //Fragment to display questions
 class QuizFragment : Fragment() {
@@ -31,8 +30,7 @@ class QuizFragment : Fragment() {
             var line = it.split(".,")
             questions.add(Question(text = line[0], answers = line[1].split(",")))
         }
-        for(i in 0..questions.size-1) Log.d("nagamani","${questions.get(i)}")
-        Log.d("nagamani","question size: ${questions.size}")
+        Timber.d("question size: ${questions.size}")
     }
 
     lateinit var currentQuestion: Question
@@ -54,7 +52,7 @@ class QuizFragment : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentQuizBinding>(
             inflater, R.layout.fragment_quiz, container, false
         )
-        Log.d("tej","oncreateView")
+        Timber.i("oncreateView")
         prepareQuestions()
         randomizeQuestions()
 
@@ -83,7 +81,7 @@ class QuizFragment : Fragment() {
                 // Advance to the next question
                 if (questionIndex < numQuestions) {
                     //change text of quit button to submit
-                    if(questionIndex==numQuestions-1) {
+                    if (questionIndex == numQuestions - 1) {
                         binding.submitButton.text = getString(R.string.submit_button)
                         binding.nextButton.visibility = View.GONE
                     }
@@ -133,6 +131,12 @@ class QuizFragment : Fragment() {
         answers = currentQuestion.answers.toMutableList()
         answers.shuffle()
         (activity as AppCompatActivity).supportActionBar?.title =
-            getString(R.string.question_title).plus(getString(R.string.title_number, questionIndex, numQuestions))
+            getString(R.string.question_title).plus(
+                getString(
+                    R.string.title_number,
+                    questionIndex,
+                    numQuestions
+                )
+            )
     }
 }
